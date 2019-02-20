@@ -1,0 +1,20 @@
+server:
+  servlet:
+    context-path: /ssm
+  port: 8081
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3309/course?serverTimezone=UTC
+    username: root
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+    generate-ddl: false
+  mvc:
+    view:
+      suffix: .jsp
+      prefix: /WEB-INF/
