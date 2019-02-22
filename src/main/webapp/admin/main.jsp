@@ -65,7 +65,7 @@
 	}
 
 	function refreshSystemCache() {
-		$.post("${pageContext.request.contextPath}/admin/system/refreshSystemCache.do",{},function(result){
+		$.post("${pageContext.request.contextPath}/admin/system/refreshSystemCache",{},function(result){
 			if(result.success){
 				$.messager.alert("系统提示","已成功刷新系统缓存！");
 			}else{
