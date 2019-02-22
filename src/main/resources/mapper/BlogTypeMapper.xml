@@ -10,7 +10,7 @@
         <result property="orderNum" column="orderNum"/>
         <result property="blogCount" column="blogCount"/>
     	</resultMap>
-    	<insert id="addBlogType" parameterType="com.jk.model.Blogger" keyProperty="id" useGeneratedKeys="true">
+    	<insert id="addBlogType" parameterType="com.jk.model.BlogType" keyProperty="id" useGeneratedKeys="true">
 		INSERT INTO t_blogtype VALUES(null,#{typeName},#{orderNum})
 	</insert>
 <!--     	<trim prefix="values(" suffix=")" suffixOverrides=","> -->
