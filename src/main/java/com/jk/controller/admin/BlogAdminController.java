@@ -78,7 +78,7 @@ public class BlogAdminController {
 		Long total = blogService.getTotal(map);
 		JSONObject result = new JSONObject();
 		JsonConfig jsonConfig = new JsonConfig();
-		jsonConfig.registerJsonValueProcessor(java.util.Date.class,new DateJsonValueProcessor("yyyy-MM-dd"));//����json���ã����ڽ�sql����ת��Ϊ��Ӧ��ʽ�����ڴ��ݵ�ǰ̨������ʾ
+		jsonConfig.registerJsonValueProcessor(java.util.Date.class,new DateJsonValueProcessor("yyyy-MM-dd"));
 		JSONArray jsonArray = JSONArray.fromObject(blogList,jsonConfig);
 		result.put("rows", jsonArray);
 		result.put("total", total);

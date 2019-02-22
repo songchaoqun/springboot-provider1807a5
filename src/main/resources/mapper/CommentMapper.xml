@@ -10,19 +10,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="content" column="content"/>
 		<result property="commentDate" column="commentDate"/>
 		<result property="state" column="state"/>
-		<!--<association property="blog" column="blog_id" select="com.jk.dao.BlogDao.findById">
-		</association>-->
+		<association property="blog" column="blog_id" select="com.jk.dao.BlogDao.findById">
+	</association>
     </resultMap>
     <select id="getCommentData" parameterType="Map"	resultMap="CommentResult">
 		SELECT * FROM t_comment 
-		<!--<where>
+		<where>
 			<if test="blogId!=null">
 				and blog_id=#{blogId}
 			</if>
 			<if test="state!=null">
 				and state=#{state}
 			</if>
-		</where>-->
+		</where>
 		ORDER BY commentDate DESC
 		<if test="start!=null and pageSize!=null">
 		 	limit #{start},#{pageSize}

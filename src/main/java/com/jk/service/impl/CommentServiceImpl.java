@@ -15,12 +15,14 @@ public class CommentServiceImpl implements CommentService {
 	@Resource
 	private CommentDao commentDao;
 	public List<Comment> getCommentData(Map<String, Object> map) {
-
 		return commentDao.getCommentData(map);
 	}
 
-	public Long getTotal(Map<String, Object> map) {
+	public int addComment(Comment comment) {
+		return commentDao.addComment(comment);
+	}
 
+	public Long getTotal(Map<String, Object> map) {
 		return commentDao.getTotal(map);
 	}
 
@@ -30,6 +32,10 @@ public class CommentServiceImpl implements CommentService {
 
 	public Integer deleteComment(Integer id) {
 		return commentDao.deleteComment(id);
+	}
+
+	public Integer deleteCommentByBlogId(Integer blogId) {
+		return commentDao.deleteComment(blogId);
 	}
 
 }
