@@ -32,7 +32,7 @@
 
 	function modifyPassword() {
 		$("#fm").form("submit",{
-			url: "${pageContext.request.contextPath}/admin/blogger/modifyPassword.do",
+			url: "${pageContext.request.contextPath}/admin/blogger/modifyPassword",
 			onSubmit: function() {
 				var newPassword = $("#password").val();
 				var newPassword2 = $("#password2").val();

@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--         博客类别映射 -->
         <mapper namespace="com.jk.dao.BlogTypeDao">
-        <resultMap id="BlogTypeResult" type="com.jk.model.Blogger">
+        <resultMap id="BlogTypeResult" type="com.jk.model.BlogType">
         <id property="id" column="id" />
         <result property="typeName" column="typeName"/>
         <result property="orderNum" column="orderNum"/>
@@ -24,7 +24,7 @@
     	<delete id="deleteBlogType" parameterType="Integer">
     	    DELETE FROM t_blogtype WHERE id=#{id}
     	</delete>
-    	    <update id="updateBlogType" parameterType="com.jk.model.Blogger">
+    	    <update id="updateBlogType" parameterType="com.jk.model.BlogType">
        		 update db_blog.t_blogtype
         <set >
             <if test="typeName!=null and typeName!=''">

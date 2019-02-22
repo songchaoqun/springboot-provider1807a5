@@ -18,7 +18,7 @@
 	
 	function openBlogTypeAddDialog() {
 		$("#dlg").dialog("open").dialog("setTitle", "添加博客类别信息");
-		url = "${pageContext.request.contextPath}/admin/blogType/save.do";
+		url = "${pageContext.request.contextPath}/admin/blogType/save";
 	}
 	
 	function openBlogTypeModifyDialog() {
@@ -30,7 +30,7 @@
 		var row = selectedRows[0];
 		$("#dlg").dialog("open").dialog("setTitle", "修改博客类别信息");
 		$("#fm").form("load", row);//会自动识别name属性，将row中对应的数据，填充到form表单对应的name属性中
-		url = "${pageContext.request.contextPath}/admin/blogType/save.do?id=" + row.id;
+		url = "${pageContext.request.contextPath}/admin/blogType/save?id=" + row.id;
 	}
 	
 	function saveBlogType() {
@@ -75,7 +75,7 @@
 		var ids = idsStr.join(","); //1,2,3,4
 		$.messager.confirm("系统提示", "<font color=red>您确定要删除选中的"+selectedRows.length+"条数据么？</font>", function(r) {
 			if(r) {
-				$.post("${pageContext.request.contextPath}/admin/blogType/delete.do",
+				$.post("${pageContext.request.contextPath}/admin/blogType/delete",
 						{ids: ids}, function(result){
 							if(result.exist) {
 								$.messager.alert("系统提示", result.exist);
@@ -102,7 +102,7 @@
 
 <body style="margin: 1px; font-family: microsoft yahei">
 <table id="dg" title="博客类别管理" class="easyui-datagrid" fitColumns="true" pagination="true"
-	url="${pageContext.request.contextPath}/admin/blogType/listBlogType.do" toolbar="#tb">
+	url="${pageContext.request.contextPath}/admin/blogType/listBlogType" toolbar="#tb">
 	<thead>
 		<tr>
 			<th field="cb" checkbox="true" align="center"></th>
