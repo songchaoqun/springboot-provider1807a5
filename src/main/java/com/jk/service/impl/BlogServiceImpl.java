@@ -30,8 +30,8 @@ public class BlogServiceImpl implements BlogService {
 	}
 
 	public Blog findById(Integer id) {
-
-		return blogDao.findById(id);
+		Blog byId = blogDao.findById(id);
+		return byId;
 	}
 
 	public Integer update(Blog blog) {

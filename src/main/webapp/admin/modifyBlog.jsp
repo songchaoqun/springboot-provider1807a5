@@ -76,7 +76,7 @@
 		var ue = UE.getEditor('editor');
 		ue.addListener("ready", function(){
 			//通过UE自己封装的ajax请求数据
-			UE.ajax.request("${pageContext.request.contextPath}/admin/blog/findById.do",
+			UE.ajax.request("${pageContext.request.contextPath}/admin/blog/findById",
 					{
 						method: "post",
 						async: false,
