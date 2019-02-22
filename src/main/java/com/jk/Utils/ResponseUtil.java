@@ -11,6 +11,5 @@ public class ResponseUtil {
 		PrintWriter out = response.getWriter();
 		out.println(obj.toString());
 		out.flush();
-		out.close();
 	}
 }

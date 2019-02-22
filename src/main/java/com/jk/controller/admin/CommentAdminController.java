@@ -11,6 +11,7 @@ import net.sf.json.JsonConfig;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
@@ -25,6 +26,7 @@ public class CommentAdminController {
 	@Resource
 	private CommentService commentService;
 	@RequestMapping("/listComment")
+	@ResponseBody
 	public JSONObject listBlog(
 			@RequestParam(value = "page", required = false) String page,
 			@RequestParam(value = "rows", required = false) String rows,
@@ -45,10 +47,11 @@ public class CommentAdminController {
 		JSONArray jsonArray = JSONArray.fromObject(commentList, jsonConfig);
 		result.put("rows", jsonArray);
 		result.put("total", total);
-		ResponseUtil.write(response, result);
+		/*ResponseUtil.write(response, result);*/
 		return result;
 	}
 	@RequestMapping("/deleteComment")
+	@ResponseBody
 	public String deleteComment(@RequestParam(value="ids",required=false)String ids,HttpServletResponse response)throws Exception
 	{
 		String idsStr[]=ids.split(",");
@@ -62,6 +65,7 @@ public class CommentAdminController {
 		return null;
 	}
 	@RequestMapping("/review")
+	@ResponseBody
 	public String review(@RequestParam(value="ids",required=false)String ids,@RequestParam(value="state",required=false)Integer state
 			,HttpServletResponse response)throws Exception
 	{

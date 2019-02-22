@@ -65,7 +65,7 @@
 	}
 
 	function refreshSystemCache() {
-		$.post("${pageContext.request.contextPath}/admin/system/refreshSystemCache.do",{},function(result){
+		$.post("${pageContext.request.contextPath}/admin/system/refreshSystemCache",{},function(result){
 			if(result.success){
 				$.messager.alert("系统提示","已成功刷新系统缓存！");
 			}else{
@@ -77,7 +77,7 @@
 	function logout() {
 		$.messager.confirm("系统提示","您确定要退出系统吗？", function(r){
 			if(r) {
-				window.location.href = "${pageContext.request.contextPath}/admin/blogger/logout.do";
+				window.location.href = "${pageContext.request.contextPath}/admin/blogger/logout";
 			}
 		});
 	}
