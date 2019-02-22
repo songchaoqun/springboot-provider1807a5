@@ -8,7 +8,6 @@ spring:
     url: jdbc:mysql://localhost:3306/blog?serverTimezone=UTC
     username: root
     password: root
-
   jpa:
     hibernate:
       ddl-auto: update
@@ -21,3 +20,8 @@ spring:
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package:  com.jk.model.*
+logging:
+  level:
+    com:
+      jk:
+        dao: DEBUG

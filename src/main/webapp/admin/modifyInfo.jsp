@@ -76,13 +76,13 @@
 				<tr>
 					<td>个人简介：</td>
 					<td>
-						<script id="profile" type="text/plain" style="width:80%; height:500px;"></script>
+						<script id="profile" type="text/plain" <%--style="width:80%; height:500px;"--%>></script>
 						<input type="hidden" id="pf" name="profile" > <%-- UEditor不能作为表单的一部分提交，所以用这种隐藏域的方式 --%>
 					</td>
 				</tr>
 				<tr>
 				<td></td>
-				<td> <a href="javascript:submitData()" class="easyui-linkbutton"
+				<td><a href="javascript:submitData()" class="easyui-linkbutton"
 					data-options="iconCls:'icon-submit'">提交</a></td>
 			</tr>
 			</table>
@@ -94,7 +94,7 @@
 	var ue = UE.getEditor('profile');
 	ue.addListener("ready", function(){
 		//通过UE自己封装的ajax请求数据
-		UE.ajax.request("${pageContext.request.contextPath}/admin/blogger/findBlogger",
+		UE.ajax.request("${pageContext.request.contextPath}/admin/blogger/findBlooger",
 				{
 					method: "post",
 					async: false,

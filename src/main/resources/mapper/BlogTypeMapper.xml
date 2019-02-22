@@ -25,7 +25,7 @@
     	    DELETE FROM t_blogtype WHERE id=#{id}
     	</delete>
     	    <update id="updateBlogType" parameterType="com.jk.model.BlogType">
-       		 update db_blog.t_blogtype
+       		 update t_blogtype
         <set >
             <if test="typeName!=null and typeName!=''">
                 typeName = #{typeName},
