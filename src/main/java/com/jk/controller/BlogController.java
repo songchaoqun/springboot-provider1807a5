@@ -192,8 +192,8 @@ public class BlogController {
 		return modelAndView;
 	}
 	/**  
-	* @Title: tagsById  
-	* @Description: ���ݱ�ǩ��ȡ��ϸ����
+	* @Title: tagsById
+	 * @Description: ���ݱ�ǩ��ȡ��ϸ����
 	*/  
 	@RequestMapping("/tag/{tagid}")
 	public ModelAndView tagsById(@PathVariable("tagid")Integer tid) throws Exception

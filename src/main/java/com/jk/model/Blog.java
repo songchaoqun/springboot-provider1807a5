@@ -2,6 +2,9 @@ package com.jk.model;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
+
 public class Blog {
     private Integer id;
     private String title;
@@ -15,6 +18,16 @@ public class Blog {
     private BlogType blogType;
     private Integer blogCount;
     private String releaseDateStr;
+    List<String> imageList=new LinkedList<String>();//正文内容所包含的图片地址
+
+    public List<String> getImageList() {
+        return imageList;
+    }
+
+    public void setImageList(List<String> imageList) {
+        this.imageList = imageList;
+    }
+
     public Integer getId() {
         return id;
     }
